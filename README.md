@@ -9,4 +9,4 @@ released under the GNU Lesser General Public License 3
 http://www.gnu.org/licenses/lgpl.html
 
 Updated for Python 3 By Lewis McMahon
-<dsgreat3(at)gmail.com>
+dsgreat3(at)gmail.com
