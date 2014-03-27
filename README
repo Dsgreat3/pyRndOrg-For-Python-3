@@ -1,0 +1,61 @@
+ pyRndOrg v0.1
+ random.org Python API
+
+ Copyright 2009 Felix Rauch <toastwaffel(at)gmail.com>
+ released under the GNU Lesser General Public License 3
+ 	http://www.gnu.org/licenses/lgpl.html
+
+=== Brief introduction ===
+The pyRndOrg library consists of four modules:
+	rndint  -  Get a number of integers
+	rndseq  -  Get a sequence of integers
+	rndstr  -  Get a number of strings
+	rndorgQ -  Get your current quota
+You can import either the whole package or only the needed
+modules. Every module has one public function get([args]),
+whose possible arguments are explained in the README file
+aswell as in each module.
+
+=== Installation ===
+Download the pyrndorg-<version>.tar.gz, unpack it and run
+ python setup.py install
+
+Windows users can use the pyrndorg-<version>.exe
+
+Alternatively, you can check out the latest code and install it manually.
+Although you will get the latest version, this is recommended for experts only!
+
+=== Usage <rndint.py> ===
+Gets a number of random integers
+
+ get(min, max, [[num], [base]])
+
+min : Minimum value
+max : Maximum value
+num : Number of integers to get (default: 1)
+base: Mathematical base to be used (2/8/10/16) (default: 10)
+
+=== Usage <rndseq.py> ===
+Gets a sequence of integers
+
+ get(min, max)
+
+min : The lower bound of the interval (inclusive)
+max : The upper bound of the interval (inclusive)
+
+=== Usage <rndstr.py> ===
+Gets a number of random strings
+
+ get(num, len, [[dig], [ua], [la], [uni]])
+
+num : Number of strings to get (required)
+len : Length of strings (required)
+dig : Whether digits should be allowed (1: yes / 0: no) (default: 0)
+ua  : Whether uppercase characters should be allowed (1: yes / 0: no) (default: 0)
+la  : Whether lowercase characters should be allowed (1: yes / 0: no) (default: 1)
+uni : Whether the strings picked should be unique (1: yes / 0: no) (default: 0)
+
+=== Usage <rndorgQ.py> ===
+Gets your current quota
+
+ get()
