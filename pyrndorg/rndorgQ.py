@@ -23,9 +23,12 @@
 #
 # For more information on usage and restrictions, 
 # read the README file or http://www.random.org/clients/http/
+#
+# Fixed for python 3 by Lewis McMahon
+# <dsgreat3(at)gmail.com>
 
 import urllib
 
 def get():
-	quotachk = urllib.urlopen("http://www.random.org/quota/?format=plain")
+	quotachk = urllib.request.urlopen("http://www.random.org/quota/?format=plain")
 	return int(quotachk.read())

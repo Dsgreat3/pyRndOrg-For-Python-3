@@ -25,6 +25,9 @@
 #
 # For more information on usage and restrictions, 
 # read the README file or http://www.random.org/clients/http/ 
+#
+# Fixed for python 3 by Lewis McMahon
+# <dsgreat3(at)gmail.com>
 
 import urllib
 from string import Template
@@ -32,7 +35,7 @@ from string import Template
 def get(min, max):
 
 	# Check quota
-	quotachk = urllib.urlopen("http://www.random.org/quota/?format=plain")
+	quotachk = urllib.request.urlopen("http://www.random.org/quota/?format=plain")
 	if int(quotachk.read()) <= 0:
 		return ("ERROR: Your Quota limit is below zero. Try again later\n"
 			    "ERROR: or buy new random numbers @ random.org")
@@ -42,7 +45,7 @@ def get(min, max):
 					  "min=${min}&max=${max}&col=1&format=plain&rnd=new")
 	url = urltmp.substitute(min=min, max=max)
 	
-	dice = urllib.urlopen(url)
+	dice = urllib.request.urlopen(url)
 	strresult = dice.read()
 	numlist = strresult.split("\n")
 	numlist.pop()
